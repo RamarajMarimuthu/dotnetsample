@@ -1,9 +1,9 @@
-FROM microsoft/dotnet:2.2-aspnetcore-runtime AS base
+FROM mcr.microsoft.com/dotnet/aspnet:2.2 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM microsoft/dotnet:2.2-sdk AS build
+FROM mcr.microsoft.com/dotnet/sdk:2.2 AS build
 WORKDIR /src
 COPY ["Test/Test.csproj", "Test/"]
 RUN dotnet restore "Test/Test.csproj"
